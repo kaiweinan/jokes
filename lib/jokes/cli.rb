@@ -1,19 +1,31 @@
 #CLI controller
 
-require 'httparty'
+# require 'httparty'
 
-resp = HTTParty.get(https://official-joke-api.appspot.com/jokes/ten)
+# resp = HTTParty.get('https://official-joke-api.appspot.com/jokes/ten')
 
-puts resp
+# puts resp
 
-# class Jokes::CLI
+class Jokes::CLI 
 
-#     def call
-#         puts "list of Jokes"
+    def call
+        puts "Welcome to the archive of Jokes!"
+        get_category
+        list_category
+        #get_user_category
+        #get_user_list
+        #get_user_joke
+        #save_joke
+    end
 
-#     end
+    def get_category
+        @category = ['General Jokes', 'Programming Jokes']
+    end
 
-#     def list_jokes
-#         puts << DOC
-
-# end
+    def list_category
+        @category.each_with_index do |c, index| 
+        puts "#{index+1}. #{c}"
+    
+        end
+    end
+end

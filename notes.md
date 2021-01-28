@@ -8,3 +8,22 @@
 {"id":357,"type":"general","setup":"Why do bees have sticky hair?","punchline":"Because they use honey combs!"},
 {"id":263,"type":"general","setup":"What is this movie about?","punchline":"It is about 2 hours long."}, 
 {"id":345,"type":"general","setup":"Why did the melons plan a big wedding?","punchline":"Because they cantaloupe!"}]
+
+
+1. flow
+2. classes
+    2a. class relationship
+
+-user is asked if he wants to see a list of jokes
+-user is asked which category he wants
+-user sees category of jokes 
+-user sees a list of jokes from that category
+-user selects a joke
+-user sees joke set up
+-user sees punchline
+-user saves joke to favorite
+
+classes
+-jokes =>building objs
+-CLI => input and decisions from user
+-Api => takes in all request and sending/formating  joke class
