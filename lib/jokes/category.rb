@@ -23,5 +23,3 @@ attr_accessor :id, :setup, :punchline, :type
     end
 
 end
-
-puts Jokes::Category.all
