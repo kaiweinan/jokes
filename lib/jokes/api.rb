@@ -1,13 +1,13 @@
-# require 'HTTParty'
+
 class Jokes::Api 
 
-    attr_accessor :url
+   attr_accessor :url
 
-@@all= []
+   @@all= []
 
    def initialize(url= nil)
-   @url = "https://official-joke-api.appspot.com/jokes/ten"
-    save
+      @url = "https://official-joke-api.appspot.com/jokes/ten"
+      save
    end
 
   def self.create_jokes(category)
@@ -20,10 +20,10 @@ class Jokes::Api
         type: data["type"],
         setup: data["setup"],
         punchline: data["punchline"]
-   }
+         }
       jokes = Jokes::Category.new(jokes_hash)
-   end
-   Jokes::Category.all
+      end
+      Jokes::Category.all
   end
 
 

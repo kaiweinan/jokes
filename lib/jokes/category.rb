@@ -9,9 +9,8 @@ attr_accessor :id, :setup, :punchline, :type
     def initialize(hash)
         hash.each do |a, b|
         self.send("#{a}=", b)  
-        end
-        
-    self.save 
+        end    
+        self.save 
     end
 
 

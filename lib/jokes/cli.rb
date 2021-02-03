@@ -18,16 +18,17 @@ class Jokes::Cli
     end
 
     def display_stash
-        stash.each do |joke|
-         puts joke.setup
+        stash.each.with_index do |joke, index|
+         puts "#{index+1}. #{joke.setup}, #{joke.punchline}"
         end
-      end
+        call
+    end
 
     def save_joke(jokes)
         input3 = gets.strip.downcase
-        joke = jokes
+        joke = jokes    
         if input3 == "yes"
-            stash << joke
+            stash << joke[input3.to_i - 1]
         else
             call
         end
@@ -46,20 +47,14 @@ class Jokes::Cli
             puts "#{index+1}. #{c.setup}" 
           end
           punchline(jokes)
-          
-          puts ""
-          puts "Do you want to save this joke to your stash? yes or no?"
-          save_joke(jokes)
           call
         elsif input == "stash"
-            puts @stash
+            display_stash
         elsif input == "exit"
             exit
         else 
             puts "try again!"
           call
-         
-        # end
       end
     end
 
@@ -70,6 +65,8 @@ class Jokes::Cli
             input2 = gets.strip.downcase
             joke = jokes[input2.to_i - 1]
             puts "#{joke.punchline}"
-              end
-
+            puts ""
+            puts "Do you want to save this joke to your stash? yes or no?"
+            save_joke(jokes)
+         end
 end
