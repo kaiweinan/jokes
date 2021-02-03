@@ -2,5 +2,6 @@
 
 require_relative '../lib/environment'
 
-Jokes::CLI.new.call
+Jokes::Cli.new.call
 
+api = Jokes::Api.new("https://official-joke-api.appspot.com/jokes/ten")
