@@ -1,4 +1,3 @@
-
 class Jokes::Api 
 
    attr_accessor :url
@@ -22,8 +21,11 @@ class Jokes::Api
         punchline: data["punchline"]
          }
       jokes = Jokes::Category.new(jokes_hash)
+      
       end
       Jokes::Category.all
+     
+      
   end
 
 

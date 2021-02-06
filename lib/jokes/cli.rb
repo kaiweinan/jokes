@@ -1,5 +1,3 @@
-
-
 class Jokes::Cli
 
     attr_accessor :stash
@@ -24,15 +22,14 @@ class Jokes::Cli
         call
     end
 
-    def save_joke(jokes)
-        input3 = gets.strip.downcase
-        joke = jokes    
-        if input3 == "yes"
-            stash << joke[input3.to_i - 1]
-        else
-            call
-        end
-    end
+    # def save_joke(jokes)
+    #     input3 = gets.strip.to_i
+    #     if input3 > 0 && input3 <= jokes.length
+    #         stash << jokes[input3.to_i - 1]
+    #     else
+    #         call
+    #     end
+    # end
 
     def call
         puts ""
@@ -59,14 +56,20 @@ class Jokes::Cli
     end
 
     
-        def punchline(jokes)
-            puts ""
-            puts "Enter a number for the punch line"
-            input2 = gets.strip.downcase
-            joke = jokes[input2.to_i - 1]
-            puts "#{joke.punchline}"
-            puts ""
-            puts "Do you want to save this joke to your stash? yes or no?"
-            save_joke(jokes)
-         end
+    def punchline(jokes)
+        puts ""
+        puts "Enter a number for the punch line"
+        input2 = gets.strip.downcase
+        joke = jokes[input2.to_i - 1]
+        puts "#{joke.setup}...            #{joke.punchline}"
+        puts ""
+        puts "select which joke you want to save or press 0 for more jokes!"
+        input = gets.strip.to_i
+        if input > 0 && input <= jokes.length
+            stash << jokes[input.to_i - 1]
+        elsif input == 0
+            call
+     end
+     call
+    end
 end
