@@ -58,7 +58,7 @@ class Jokes::Cli
     
     def punchline(jokes)
         puts ""
-        puts "Enter a number for the punch line"
+        puts "Enter a number for the punchline"
         input2 = gets.strip.downcase
         joke = jokes[input2.to_i - 1]
         puts "#{joke.setup}...            #{joke.punchline}"

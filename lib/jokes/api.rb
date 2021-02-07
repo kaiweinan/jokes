@@ -4,9 +4,9 @@ class Jokes::Api
 
    @@all= []
 
-   def initialize(url= nil)
+   def initialize(url)
       @url = "https://official-joke-api.appspot.com/jokes/ten"
-      save
+      self.save
    end
 
   def self.create_jokes(category)
