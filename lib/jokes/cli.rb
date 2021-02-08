@@ -11,25 +11,12 @@ class Jokes::Cli
     puts "welcome to the archive of jokes!"
     end
 
-    def stash
-    @stash
-    end
-
     def display_stash
         stash.each.with_index do |joke, index|
          puts "#{index+1}. #{joke.setup}, #{joke.punchline}"
         end
         call
     end
-
-    # def save_joke(jokes)
-    #     input3 = gets.strip.to_i
-    #     if input3 > 0 && input3 <= jokes.length
-    #         stash << jokes[input3.to_i - 1]
-    #     else
-    #         call
-    #     end
-    # end
 
     def call
         puts ""
